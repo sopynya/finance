@@ -1,6 +1,7 @@
 "use client"
 import Bills from "@/components/Bills";
 import { useState, useEffect } from "react";
+import Loading from "@/components/Loading";
 export default function BillsPage() {
     const [bills, setBills] = useState([]);
     const [loading, setLoading] = useState(false);
@@ -13,6 +14,7 @@ export default function BillsPage() {
             setLoading(false);
         }
         load();
-    }, [])
+    }, []);
+    if (loading) return <Loading />
     return (<Bills bills={bills} />)
 }

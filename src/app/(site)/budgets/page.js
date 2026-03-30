@@ -1,6 +1,7 @@
 "use client";
 import Budgets from "@/components/Budgets"
 import { useState, useEffect } from "react";
+import Loading from "@/components/Loading";
 export default function BudgetsPage() {
     const [budgets, setBudgets] = useState([]);
     const [transactions, setTransactions] = useState([]);
@@ -15,6 +16,7 @@ export default function BudgetsPage() {
             setLoading(false);
         }
         load();
-    }, [])
+    }, []);
+    if (loading) return <Loading />
     return(<Budgets budgets={budgets} transactions={transactions} />)
 }

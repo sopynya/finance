@@ -1,4 +1,5 @@
 "use client"
+import Loading from "@/components/Loading";
 import Transactions from "@/components/Transactions";
 import { useEffect, useState } from "react";
 export default function TransactionsPage() {
@@ -14,5 +15,6 @@ export default function TransactionsPage() {
         }
         load();
     }, [])
+    if (loading) return <Loading />
     return(<Transactions transactions={transactions}/>);
 }

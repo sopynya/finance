@@ -1,6 +1,7 @@
 "use client";
 import Pots from "@/components/Pots";
 import { useEffect, useState } from "react";
+import Loading from "@/components/Loading";
 export default function PotsPage() {
     const [pots, setPots] = useState([]);
     const [loading, setLoading] = useState(false);
@@ -13,6 +14,7 @@ export default function PotsPage() {
             setLoading(false);
         }
         load();
-    }, [])
+    }, []);
+    if (loading) return <Loading />
     return(<Pots pots={pots} />);
 }

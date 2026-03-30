@@ -2,6 +2,7 @@
 import Link from 'next/link';
 import styles from './overview.module.css';
 import { useState, useEffect, useMemo } from 'react';
+import Loading from './Loading';
 export default function Overview() {
     const [currentBalance, setCurrentBalance] = useState(0);
     const [income, setIncome] = useState(0);
@@ -130,6 +131,7 @@ export default function Overview() {
             soonTotal,
         };
     }, [bills]);
+    if (loading) return <Loading />
     return(
         <div className={styles.page}>
             <h1>Overview</h1>
