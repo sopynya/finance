@@ -1,0 +1,277 @@
+.page {
+    width: 100%;
+    padding: 32px 40px;
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header h1 {
+    font-size: 32px;
+    color: #201F24;
+}
+.header button {
+    color: white;
+    background-color: #201F24;
+    border: none;
+    border-radius: 8px;
+    padding: 16px;
+    font-family: var(--font-public-sans);
+    font-weight: 700;
+    font-size: 14px;
+    cursor: pointer;
+}
+.main {
+    width: 100%;
+    display: flex;
+    gap: 24px;
+    margin-top: 32px;
+}
+.pot {
+    background-color: white;
+    border-radius: 12px;
+    padding: 24px;
+    width: calc(50% - 12px);
+}
+.head {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 32px;
+    position: relative;
+}
+.head h2 {
+    font-size: 20px;
+    color: #201F24;
+    display: flex;
+    text-transform: capitalize;
+    gap: 16px;
+
+}
+.head h2 span {
+    width: 15px;
+    height: 15px;
+    border-radius: 100%;
+}
+.head img {
+    cursor: pointer;
+}
+.total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.total p {
+    color: #696868;
+    font-size: 14px;
+}
+.total h3 {
+    font-size: 32px;
+    color: #201F24;
+}
+.percentage {
+    width: 100%;
+    background-color: #F8F4F0;
+    height: 8px;
+    border-radius: 4px;
+    margin-bottom: 13px;
+}
+.percentage div {
+    height: 8px;
+    border-radius: 4px;
+}
+.data {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 32px;
+}
+.data p {
+    color:#696868;
+    font-weight: 700;
+    font-size: 12px;
+
+}
+.data span {
+    color: #696868;
+    font-size: 12px;
+}
+.actions {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+.actions button {
+    flex: 1;
+    background-color: #F8F4F0;
+    border: none;
+    color:#201F24;
+    font-family: var(--font-public-sans);
+    border-radius: 8px;
+    padding: 16px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+}
+.bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 11;
+}
+.modal {
+    width: 560px;
+    background-color: white;
+    border-radius: 12px;
+    padding: 32px;
+    position: relative;
+}
+.modal img {
+    position: absolute;
+    top: 38px;
+    right: 32px;
+    cursor: pointer;
+}
+.modal h1 {
+    font-size: 32px;
+    color: #201F24;
+}
+.modal p {
+    margin: 20px 0;
+    font-size: 14px;
+    color: #696868;
+}
+.modalstart {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+    align-items: center;
+}
+.modalstart p {
+    margin: 0;
+}
+.modalstart h3 {
+    color:#201F24;
+    font-size: 32px;
+}
+.percent {
+    width: 100%;
+    height: 8px;
+    border-radius: 4px;
+    background-color: #F8F4F0;
+    display: flex;
+    overflow: hidden;
+    margin-bottom: 13px;
+}
+.current {
+    height: 8px;
+    background-color: #201F24;
+    display: flex;
+    justify-content: right;
+}
+.toadd {
+    border-left: 2px solid white;
+    background-color: #277C78;
+    border-radius: 0 4px 4px 0;
+}
+.pin {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.pin p {
+    color:#277C78;
+    font-size: 12px;
+    font-weight: 900;
+    margin: 0;
+}
+.pin span {
+    color: #696868;
+    font-size: 12px;
+}
+.form {
+    display: flex;
+    flex-direction: column;
+}
+.form label {
+    font-size: 12px;
+    font-weight: 900;
+    color:#696868;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+.value {
+    display: flex;
+    gap: 16px;
+    padding: 12px 20px;
+    border-radius: 8px;
+    border:1px solid #98908B; 
+    align-items: center;
+}
+.value span {
+    font-size: 14px;
+    color: #98908B;
+    font-weight: 400;
+}
+.value input {
+    border: none;
+    font-size: 14px;
+    color:#201F24;
+    flex: 1;
+}
+.value input:focus {
+    outline: none;
+}
+.form button {
+    margin-top: 20px;
+    background-color: #201F24;
+    color: white;
+    font-size: 14px;
+    font-weight: 900;
+    font-family: var(--font-public-sans);
+    padding: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    border: none;
+}
+.toremove {
+    background-color: #C94736;
+    border-radius: 0 4px 4px 0;
+    height: 100%;
+    border-left: 2px solid white;
+}
+.error {
+    margin: 5px 0;
+    text-align: center;
+}
+.editsection {
+    position: absolute;
+    background-color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    top: 20px;
+    right: -5px; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.editsection button {
+    background-color: transparent;
+    border: none;
+    font-family: var(--font-public-sans);
+    text-align: left;
+    cursor: pointer;
+}
+.editsection hr {
+    border: 1px solid #F8F4F0;
+}
