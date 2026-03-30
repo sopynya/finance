@@ -293,7 +293,8 @@
     z-index: 11;
 }
 .modal {
-    width: 560px;
+    width: 100%;
+    max-width: 560px;
     background-color: white;
     border-radius: 12px;
     padding: 32px;

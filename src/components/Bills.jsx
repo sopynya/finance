@@ -41,12 +41,12 @@ export default function Bills({bills}) {
         }
         if(sort === 'highest') {
             result = [...result].sort((a, b) => 
-                a.amount > b.amount
+                Number(a.amount) > Number(b.amount)
             )
         }
         if(sort === 'lowest') {
             result = [...result].sort((a, b) => 
-                a.amount < b.amount
+                Number(a.amount) < Number(b.amount)
             )
         }
         return result
@@ -126,7 +126,7 @@ export default function Bills({bills}) {
             <main className={styles.main}>
                 <div className={styles.info}>
                     <div className={styles.total}>
-                        <img src='/assets/images/icon-recurring-bills.svg'/>
+                        <img src='/assets/images/icon-recurring-bills.svg' alt='Receipt recurring bills icon'/>
                         <div>
                             <p>Total Bills</p>
                             <h1>${totalAmount.toFixed(2)}</h1>
@@ -146,12 +146,12 @@ export default function Bills({bills}) {
                     <div className={styles.filter}>
                         <div className={styles.search}>
                             <input type='search' value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} placeholder='Search bills' />
-                            <img src='/assets/images/icon-search.svg' />
+                            <img src='/assets/images/icon-search.svg' alt='Search icon' />
                         </div>
                         <div className={styles.actions}>
                             <p>Sort by</p>
                             <div onClick={() => setShowSort(!showSort)}>
-                                <button>{sort} <img src='/assets/images/icon-caret-down.svg'/></button>
+                                <button>{sort} <img src='/assets/images/icon-caret-down.svg' alt='Caret down icon'/></button>
                                 {showSort && (
                                     <div className={styles.sorts}>
                                     <p onClick={() => setSort('latest')}>Latest</p>
@@ -181,15 +181,15 @@ export default function Bills({bills}) {
                                 return(
 
                                 <tr key={bill.id}>
-                                    <td className={styles.nametd}><img src={bill.icon}/>{bill.name}</td>
+                                    <td className={styles.nametd}><img src={bill.icon} alt='Avatar'/>{bill.name}</td>
                                     <td>
                                        <div className={styles.datetd} style={{color: status === "done"? '#277C78' : ''}}>
                                          Monthly-{getOrdinal(bill.day)}
                                         {status === "done" && (
-                                            <img src='/assets/images/icon-bill-paid.svg' />
+                                            <img src='/assets/images/icon-bill-paid.svg' alt='Paid icon' />
                                         )}
                                         {status === "alert" && (
-                                            <img src='/assets/images/icon-bill-due.svg' />
+                                            <img src='/assets/images/icon-bill-due.svg' alt='Due icon' />
                                         )}
                                        </div>
                                     </td>

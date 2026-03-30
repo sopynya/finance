@@ -51,8 +51,6 @@ export default function Budgets({budgets, transactions}) {
     const strokeWidth = 35;
     const circumference = 2 * Math.PI * radius;
 
-    let offset = 0;
-
     const segments = budgetsWithSpent.map((b) => ({
         ...b,
         percentage: total === 0 ? 0 : (b.spent / total) * 100,
@@ -173,7 +171,7 @@ export default function Budgets({budgets, transactions}) {
                         <div key={bud.id} className={styles.budget}>
                             <div className={styles.head}>
                                 <h2><span style={{backgroundColor: colors[bud.color]}} />{bud.category}</h2>
-                                <img src='/assets/images/icon-ellipsis.svg' onClick={() => setShowActions(showActions === bud.id? '' : bud.id)} />
+                                <img src='/assets/images/icon-ellipsis.svg' alt='See more icon' onClick={() => setShowActions(showActions === bud.id? '' : bud.id)} />
                                 {showActions === bud.id && (
                                 <div className={styles.actions}>
                                     <button onClick={() => setEdit(edit === bud.id ? '': bud.id)}>Edit Budget</button>
@@ -203,7 +201,7 @@ export default function Budgets({budgets, transactions}) {
                             <div className={styles.transactions}>
                                 <div className={styles.title}>
                                     <h3>Latest Spending</h3>
-                                    <Link href='/transactions'>See All <img src='/assets/images/icon-caret-right.svg'/></Link>
+                                    <Link href='/transactions'>See All <img src='/assets/images/icon-caret-right.svg' alt='Caret right icon'/></Link>
                                 </div>
                                 {filteredTransactions.slice(0, 3).map((t) => {
                                     if (t.type === 'positive') {
@@ -213,7 +211,7 @@ export default function Budgets({budgets, transactions}) {
                                     return (
                                     <div key={t.id} className={styles.transaction}>
                                         <div className={styles.maininfo}>
-                                            <img src={t.icon} />
+                                            <img src={t.icon} alt='Avatar'/>
                                             <p>{t.name}</p>
                                         </div>
                                         <div className={styles.direct}>
@@ -256,8 +254,8 @@ function DeleteBudget({budget, onClose}) {
     return(
         <div className={styles.bg}>
             <div className={styles.modal}>
-                <h1>Delete '{budget.category}'?</h1>
-                <img src='/assets/images/icon-close-modal.svg' onClick={onClose} />
+                <h1>Delete &apos;{budget.category}&apos;?</h1>
+                <img src='/assets/images/icon-close-modal.svg' alt='Close icon' onClick={onClose} />
                 <p>Are you sure you want to delete this budget? This action cannot be reversed, and all the data inside it will be removed forever.</p>
                 <button onClick={handleDelete} className={styles.confirm}>Yes, Confirm Deletion</button>
                 <button onClick={onClose} className={styles.goback}>No, Go Back</button>

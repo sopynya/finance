@@ -26,7 +26,8 @@
     color: white;
 }
 .auth {
-    width: 560px;
+    width: 100%;
+    max-width: 560px;
     background-color: white;
     height: fit-content;
     margin: auto;

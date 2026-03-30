@@ -61,7 +61,7 @@ export default function AddBudget({onClose}) {
         setError("");
         try {
             const max = cents / 100;
-            if(!max || max == 0) {
+            if(!max || max === 0) {
                 setError("Fill all fields");
                 setLoading(false);
                 return;
@@ -85,7 +85,7 @@ export default function AddBudget({onClose}) {
         <div className={styles.bg}>
             <div className={styles.modal}>
                 <h1>Add New Budget</h1>
-                <img src='/assets/images/icon-close-modal.svg' className={styles.close} onClick={onClose}/>
+                <img src='/assets/images/icon-close-modal.svg' alt='Close icon' className={styles.close} onClick={onClose}/>
                 <p>Choose a category to set a spending budget. These categories can help you monitor spending.</p>
 
                 <form className={styles.form} onSubmit={handleNewBudget}>
@@ -93,7 +93,7 @@ export default function AddBudget({onClose}) {
                         Budget Category
                         <div className={showCategories ? `${styles.categories} ${styles.active}`: styles.categories} onClick={() => setShowCategories(!showCategories)}>
                             <p>{category}</p>
-                            <img src='/assets/images/icon-caret-down.svg' />
+                            <img src='/assets/images/icon-caret-down.svg' alt='Caret down icon' />
                             {showCategories && (
                                 <div className={styles.categorylist}>
                                     {cat.map((c) => (
@@ -127,7 +127,7 @@ export default function AddBudget({onClose}) {
                         Theme
                         <div className={showColors ? `${styles.color} ${styles.active}` : styles.color} onClick={() => setShowColors(!showColors)}>
                             <p><span style={{backgroundColor: colors[color]}} />{color}</p>
-                            <img src='/assets/images/icon-caret-down.svg' />
+                            <img src='/assets/images/icon-caret-down.svg' alt='Caret down icon' />
                             {showColors && (
                             <div className={styles.colors}>
                                 {Object.entries(colors).map(([name, hex]) => (

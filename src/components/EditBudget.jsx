@@ -79,7 +79,7 @@ export default function EditBudget({onClose, budget}) {
         <div className={styles.bg}>
             <div className={styles.modal}>
                 <h1>Edit Budget</h1>
-                <img src='/assets/images/icon-close-modal.svg' className={styles.close} onClick={onClose}/>
+                <img src='/assets/images/icon-close-modal.svg' alt='Close icon' className={styles.close} onClick={onClose}/>
                 <p>As your budgets change, feel free to update your spending limits.</p>
 
                 <form className={styles.form} onSubmit={handleEdit}>
@@ -87,7 +87,7 @@ export default function EditBudget({onClose, budget}) {
                         Budget Category
                         <div className={showCategories ? `${styles.categories} ${styles.active}`: styles.categories} onClick={() => setShowCategories(!showCategories)}>
                             <p>{category}</p>
-                            <img src='/assets/images/icon-caret-down.svg' />
+                            <img src='/assets/images/icon-caret-down.svg' alt='Caret down icon' />
                             {showCategories && (
                                 <div className={styles.categorylist}>
                                     {cat.map((c) => (
@@ -120,7 +120,7 @@ export default function EditBudget({onClose, budget}) {
                         Theme
                         <div className={showColors ? `${styles.color} ${styles.active}` : styles.color} onClick={() => setShowColors(!showColors)}>
                             <p><span style={{backgroundColor: colors[color]}} />{color}</p>
-                            <img src='/assets/images/icon-caret-down.svg' />
+                            <img src='/assets/images/icon-caret-down.svg' alt='Caret down icon' />
                             {showColors && (
                             <div className={styles.colors}>
                                 {Object.entries(colors).map(([name, hex]) => (

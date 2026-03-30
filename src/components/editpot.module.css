@@ -11,7 +11,8 @@
     z-index: 11;
 }
 .modal {
-    width: 560px;
+    width: 100%;
+    max-width: 560px;
     background-color: white;
     border-radius: 12px;
     padding: 32px;
@@ -117,7 +118,7 @@
     gap: 5px;
     flex-direction: column;
     height: 120px;
-    overflow:scroll ;
+    overflow:auto ;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.371);
 }
 .colors p {

@@ -61,6 +61,8 @@
     gap: 20px;
     cursor: pointer;
     margin-bottom: 20px;
+    background-color: transparent;
+    border: none;
 }
 .sb {
     width: 6%;

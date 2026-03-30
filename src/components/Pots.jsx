@@ -42,7 +42,7 @@ export default function Pots({pots}) {
                         <div key={p.id} className={styles.pot}>
                             <div className={styles.head}>
                                 <h2><span style={{backgroundColor: colors[p.color]}}/>{p.name}</h2>
-                                <img src='/assets/images/icon-ellipsis.svg' onClick={() => setShowActions(p.id)}/>
+                                <img src='/assets/images/icon-ellipsis.svg' alt='See more icon' onClick={() => setShowActions(p.id)}/>
                                 {showActions === p.id && (
                                     <div className={styles.editsection}>
                                     <button onClick={() => setShowEdit(p.id)}>Edit Pot</button>
@@ -123,9 +123,9 @@ function AddMoney({pot, onClose}) {
     return(
         <div className={styles.bg}>
             <div className={styles.modal}>
-                <h1>Add to '{pot.name}'</h1>
+                <h1>Add to &apos;{pot.name}&apos;</h1>
                 <p>Add money to your pot to keep it separate from your main balance. As soon as you add this money, it will be deducted from your current balance.</p>
-                <img src='/assets/images/icon-close-modal.svg' onClick={onClose}/>
+                <img src='/assets/images/icon-close-modal.svg' alt='Close icon' onClick={onClose}/>
                 <div className={styles.modalstart}>
                     <p>New Amount</p>
                     <h3>${amount + Number(pot.savings)}</h3>
@@ -211,7 +211,7 @@ function WithdrawMoney({pot, onClose}) {
         <div className={styles.modal}>
             <h1>Withdraw from '{pot.name}'</h1>
             <p>Withdraw from your pot to put money back in your main balance. This will reduce the amount you have in this pot.</p>
-            <img src='/assets/images/icon-close-modal.svg' onClick={onClose}/>
+            <img src='/assets/images/icon-close-modal.svg' alt='Close icon' onClick={onClose}/>
             <div className={styles.modalstart}>
                 <p>New Amount</p>
                 <h3>${Number(pot.savings) - amount}</h3>

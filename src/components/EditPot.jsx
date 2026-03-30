@@ -63,7 +63,7 @@ export default function EditPot({pot, onClose}) {
     return(
         <div className={styles.bg}>
             <div className={styles.modal}>
-                <img src='/assets/images/icon-close-modal.svg' onClick={onClose} className={styles.close} />
+                <img src='/assets/images/icon-close-modal.svg' alt='Close icon' onClick={onClose} className={styles.close} />
                 <h1>Edit Pot</h1>
                 <p>If your saving targets change, feel free to update your pots.</p>
                 <form className={styles.form} onSubmit={handleEdit}>
@@ -95,7 +95,7 @@ export default function EditPot({pot, onClose}) {
                         Theme
                         <div className={styles.theme} onClick={() => setShowColors(!showColors)}>
                             <p><span style={{backgroundColor: colors[color]}}/>{color}</p>
-                            <img src='/assets/images/icon-caret-down.svg'/>
+                            <img src='/assets/images/icon-caret-down.svg' alt='Caret down icon'/>
                             {showColors && (
                                 <div className={styles.colors}>
                                     {Object.entries(colors).map(([name, hex]) => (

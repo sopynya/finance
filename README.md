@@ -30,8 +30,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://www.frontendmentor.io/solutions/finance-app-using-nextjs-_6ireTCC14)
-- Live Site URL: [Add live site URL here](https://finance-app-six-silk.vercel.app)
+- Solution URL: [FrontEndMentor](https://www.frontendmentor.io/solutions/finance-app-using-nextjs-_6ireTCC14)
+- Live Site URL: [Finance](https://finance-app-six-silk.vercel.app)
 
 ## My process
 

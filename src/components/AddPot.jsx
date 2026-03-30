@@ -63,7 +63,7 @@ export default function AddPot({onClose}) {
     return(
         <div className={styles.bg}>
             <div className={styles.modal}>
-                <img src='/assets/images/icon-close-modal.svg' onClick={onClose} className={styles.close} />
+                <img src='/assets/images/icon-close-modal.svg' alt='Close icon' onClick={onClose} className={styles.close} />
                 <h1>Add New Pot</h1>
                 <p>Create a pot to set savings targets. These can help keep you on track as you save for special purchases.</p>
                 <form className={styles.form} onSubmit={handleEdit}>
@@ -95,7 +95,7 @@ export default function AddPot({onClose}) {
                         Theme
                         <div className={styles.theme} onClick={() => setShowColors(!showColors)}>
                             <p><span style={{backgroundColor: colors[color]}}/>{color}</p>
-                            <img src='/assets/images/icon-caret-down.svg'/>
+                            <img src='/assets/images/icon-caret-down.svg' alt='Caret down icon'/>
                             {showColors && (
                                 <div className={styles.colors}>
                                     {Object.entries(colors).map(([name, hex]) => (

@@ -139,7 +139,7 @@
     border-radius: 8px;
     box-shadow: 0 0 20px rgba(160, 160, 160, 0.407);
     height: fit-content;
-    overflow: scroll;
+    overflow: auto;
 }
 .sorts p {
     color: #201F24;

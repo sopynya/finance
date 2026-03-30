@@ -84,7 +84,7 @@ export default function AddTransactions({onClose}) {
     return(
         <div className={styles.bgmodal}>
             <div className={styles.modal}>
-                <img src='/assets/images/icon-close-modal.svg' onClick={onClose} className={styles.close} />
+                <img src='/assets/images/icon-close-modal.svg' alt='Close icon' onClick={onClose} className={styles.close} />
                 <h2>Add New Transaction</h2>
                 <p>Track your latest transactions by adding them</p>
                 <form className={styles.form} onSubmit={postTransaction}>
@@ -92,7 +92,7 @@ export default function AddTransactions({onClose}) {
                         Icons
                         <div className={styles.iconsChoose}>
                             {fotos.map((f) => (
-                                <img key={f} src={`/assets/images/avatars/${f}`} onClick={() => setIcon(`/assets/images/avatars/${f}`)} className={icon === `/assets/images/avatars/${f}` ? styles.active : ''}/>
+                                <img key={f} src={`/assets/images/avatars/${f}`} onClick={() => setIcon(`/assets/images/avatars/${f}`)} className={icon === `/assets/images/avatars/${f}` ? styles.active : ''} alt='Avatar icon choice'/>
                             ))}
                         </div>
                     </label>
@@ -101,7 +101,7 @@ export default function AddTransactions({onClose}) {
                     </label>
                     <label>
                         Category
-                        <div onClick={() => setShowCat(!showCat)} className={styles.catChoice}>{category}<img src='/assets/images/icon-caret-down.svg'/>
+                        <div onClick={() => setShowCat(!showCat)} className={styles.catChoice}>{category}<img src='/assets/images/icon-caret-down.svg' alt='Caret down icon'/>
                             {showCat && (
                                 <div className={styles.cat}>
                                 {cat.map((c) => (

@@ -34,7 +34,7 @@ export default function Login() {
     return(
         <div className={styles.page}>
             <div className={styles.hero}>
-                <img src='/assets/images/logo-large.svg' className={styles.logo} />
+                <img src='/assets/images/logo-large.svg' className={styles.logo} alt='Logo'/>
 
                 <h2>Keep track of your money and save for your future</h2>
                 <p>Personal finance app puts you in control of your spending. Track transactions, set budgets, and add to savings pots easily.</p>
@@ -48,7 +48,7 @@ export default function Login() {
                     <label>Password
                     <div className={styles.password}>
                         <input type={show ? "text" : "password"} value={password} onChange={(e) => setPassword(e.target.value)} required/>
-                        <img onClick={() => setShow(!show)} src={show? '/assets/images/icon-show-password.svg' : '/assets/images/icon-hide-password.svg'}/>
+                        <img onClick={() => setShow(!show)} src={show? '/assets/images/icon-show-password.svg' : '/assets/images/icon-hide-password.svg'} alt='Show/Hide password'/>
                     </div>
                     </label>
                     <button type='submit' disabled={loading}>{loading ? 'Logging in..' : 'Login'}</button>

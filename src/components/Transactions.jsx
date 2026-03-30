@@ -66,12 +66,12 @@ export default function Transactions({transactions}) {
         }
         if(sortBy === 'highest') {
             result = [...result].sort((a, b) => 
-                a.amount > b.amount
+                Number(a.amount) > Number(b.amount)
             )
         }
         if(sortBy === 'lowest') {
             result = [...result].sort((a, b) => 
-                a.amount < b.amount
+                Number(a.amount) < Number(b.amount)
             )
         }
         for(let i= 0; i < cat.length; i++) {
@@ -116,12 +116,12 @@ export default function Transactions({transactions}) {
                 <div className={styles.filter}>
                     <div className={styles.searchbar}>
                         <input type='search' value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} placeholder='Search transaction' />
-                        <img src='/assets/images/icon-search.svg' />
+                        <img src='/assets/images/icon-search.svg' alt='Search icon' />
                     </div>
                     <div className={styles.actions}>
                         <label>
                             Sort by
-                            <button className={showSortBy ? styles.active : ''} onClick={() => setShowSortBy(!showSortBy)}>{sortBy} <img src='/assets/images/icon-caret-down.svg'/></button>
+                            <button className={showSortBy ? styles.active : ''} onClick={() => setShowSortBy(!showSortBy)}>{sortBy} <img src='/assets/images/icon-caret-down.svg' alt='Caret down icon'/></button>
                             {showSortBy && (
                                 <div className={styles.optionsSort}>
                                     {sorts.map((s) => (
@@ -133,7 +133,7 @@ export default function Transactions({transactions}) {
 
                         <label>
                             Category
-                            <button className={showCategories ? styles.active : ''} onClick={() => setShowCategories(!showCategories)}>{category} <img src='/assets/images/icon-caret-down.svg'/></button>
+                            <button className={showCategories ? styles.active : ''} onClick={() => setShowCategories(!showCategories)}>{category} <img src='/assets/images/icon-caret-down.svg' alt='Caret down icon'/></button>
                             {showCategories && (
                                 <div className={styles.optionsCategory}>
                                 {cat.map((c) => (
@@ -160,7 +160,7 @@ export default function Transactions({transactions}) {
                         <tbody>
                             {paginatedData.map((trans) => (
                                 <tr key={trans.id}>
-                                    <td className={styles.nametd}><img src={trans.icon} />{trans.name}</td>
+                                    <td className={styles.nametd}><img src={trans.icon}alt='avatar'/>{trans.name}</td>
                                     <td className={styles.categorytd}>{trans.category}</td>
                                     <td className={styles.datetd}>{new Intl.DateTimeFormat("en-GB", {day: "2-digit",month: "short",year: "numeric",}).format(new Date(trans.date))}</td>
                                     <td className={trans.type === 'negative'? styles.negative : styles.positive}>{trans.type === 'negative' ? `-$${trans.amount}` : `+$${trans.amount}`}</td>
@@ -170,7 +170,7 @@ export default function Transactions({transactions}) {
                     </table>
                     <div className={styles.pagination}>
                             <button className={styles.pn} onClick={() => setCurrentPage(p => Math.max(p - 1, 1))} disabled={currentPage === 1}>
-                                <img src='/assets/images/icon-caret-left.svg'/>
+                                <img src='/assets/images/icon-caret-left.svg' alt='Caret left icon'/>
                                 Prev
                             </button>
                             <div className={styles.number}>
@@ -182,7 +182,7 @@ export default function Transactions({transactions}) {
                             </div>
                             <button className={styles.pn} onClick={() => setCurrentPage(p => Math.min(p + 1, totalPages))} disabled={currentPage === totalPages}>
                                 Next
-                                <img src='/assets/images/icon-caret-right.svg'/>
+                                <img src='/assets/images/icon-caret-right.svg' alt='Caret right icon'/>
                             </button>
                     </div>
                     </div>

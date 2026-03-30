@@ -74,7 +74,7 @@ export default function AddBills({onClose}) {
     return(
         <div className={styles.bgmodal}>
             <div className={styles.modal}>
-                <img src='/assets/images/icon-close-modal.svg' onClick={onClose} className={styles.close} />
+                <img src='/assets/images/icon-close-modal.svg' alt='Close icon' onClick={onClose} className={styles.close} />
                 <h2>Add New Bill</h2>
                 <p>Track your latest bills by adding them and their due date</p>
                 <form className={styles.form} onSubmit={postBill}>
@@ -82,7 +82,7 @@ export default function AddBills({onClose}) {
                         Icons
                         <div className={styles.iconsChoose}>
                             {fotos.map((f) => (
-                                <img key={f} src={`/assets/images/avatars/${f}`} onClick={() => setIcon(`/assets/images/avatars/${f}`)} className={icon === `/assets/images/avatars/${f}` ? styles.active : ''}/>
+                                <img key={f} src={`/assets/images/avatars/${f}`} onClick={() => setIcon(`/assets/images/avatars/${f}`)} className={icon === `/assets/images/avatars/${f}` ? styles.active : ''} alt='Avatar'/>
                             ))}
                         </div>
                     </label>

@@ -72,8 +72,6 @@ export default function Overview() {
         const strokeWidth = 35;
         const circumference = 2 * Math.PI * radius;
     
-        let offset = 0;
-    
         const segments = budgetsWithSpent.map((b) => ({
             ...b,
             percentage: total === 0 ? 0 : (b.spent / total) * 100,
@@ -95,39 +93,28 @@ export default function Overview() {
     };
 
     const summary = useMemo(() => {
-        let paidCount = 0;
         let paidTotal = 0;
-
-        let upcomingCount = 0;
         let upcomingTotal = 0;
-
-        let soonCount = 0;
         let soonTotal = 0;
 
         bills.forEach((bill) => {
             const status = getBillStatus(bill.day);
 
             if (status === "done") {
-                paidCount++;
                 paidTotal += Number(bill.amount);
             }
 
             if (status === "normal") {
-                upcomingCount++;
                 upcomingTotal += Number(bill.amount);
             }
 
             if (status === "alert") {
-                soonCount++;
                 soonTotal += Number(bill.amount);
             }
         });
         return {
-            paidCount,
             paidTotal,
-            upcomingCount,
             upcomingTotal,
-            soonCount,
             soonTotal,
         };
     }, [bills]);
@@ -156,11 +143,11 @@ export default function Overview() {
                         <div className={styles.pots}>
                             <div className={styles.potsheader}>
                                 <h3>Pots</h3>
-                                <Link href='/pots'>See Details <img src='/assets/images/icon-caret-right.svg'/></Link>
+                                <Link href='/pots'>See Details <img src='/assets/images/icon-caret-right.svg' alt='Caret right icon'/></Link>
                             </div>
                             <div className={styles.potsinfo}>
                                 <div className={styles.pottotal}>
-                                    <img src='/assets/images/icon-pot.svg'/>
+                                    <img src='/assets/images/icon-pot.svg' alt='Tip Jar icon'/>
                                     <div>
                                         <p>Total Saved</p>
                                         <h4>${totalSavings}</h4>
@@ -184,12 +171,12 @@ export default function Overview() {
                         <div className={styles.transactions}>
                             <div className={styles.trheader}>
                                 <h3>Transactions</h3>
-                                <Link href='/transactions'>View All <img src='/assets/images/icon-caret-right.svg'/></Link>
+                                <Link href='/transactions'>View All <img src='/assets/images/icon-caret-right.svg' alt='Caret right icon'/></Link>
                             </div>
                             <div className={styles.trsec}>
                                 {transactions.slice(0, 5).map((tr) => (
                                     <div className={styles.transaction} key={tr.id}>
-                                        <h4><img src={tr.icon}/>{tr.name}</h4>
+                                        <h4><img src={tr.icon} alt='avatar'/>{tr.name}</h4>
                                         <div>
                                             <p style={{color: tr.type === 'negative' ? '#201F24': '#277C78'}}>{tr.type === 'negative' ? '-' : '+'}${tr.amount}</p>
                                             <span>{new Intl.DateTimeFormat("en-GB", {day: "2-digit",month: "short",year: "numeric",}).format(new Date(tr.date))}</span>
@@ -204,7 +191,7 @@ export default function Overview() {
                         <div className={styles.budgets}>
                             <div className={styles.trheader}>
                                 <h3>Budgets</h3>
-                                <Link href='/budgets'>See Details <img src='/assets/images/icon-caret-right.svg'/></Link>
+                                <Link href='/budgets'>See Details <img src='/assets/images/icon-caret-right.svg' alt='Caret right icon'/></Link>
                             </div>
                             <div className={styles.budgetsinfo}>
                                 <div className={styles.chart}>
@@ -232,7 +219,7 @@ export default function Overview() {
 
                                 <div className={styles.budgetsdata}>
                                     {budgetsWithSpent.slice(0, 4).map((bud) => (
-                                        <div className={styles.budget}>
+                                        <div className={styles.budget} key={bud.id}>
                                             <span style={{backgroundColor: colors[bud.color]}} />
                                             <div>
                                                 <p>{bud.category}</p>
@@ -247,7 +234,7 @@ export default function Overview() {
                         <div className={styles.bills}>
                             <div className={styles.trheader}>
                                 <h3>Recurring Bills</h3>
-                                <Link href='/bills'>See Details <img src='/assets/images/icon-caret-right.svg'/></Link>
+                                <Link href='/bills'>See Details <img src='/assets/images/icon-caret-right.svg' alt='Caret right icon'/></Link>
                             </div>
                             <div className={styles.billsdata}>
                                 <div className={styles.paidb}>
