@@ -9,8 +9,10 @@ export default function TransactionsPage() {
         async function load() {
             setLoading(true);
             const res =await fetch('/api/transactions');
-            const data = await res.json();
-            setTransactions(data);
+            if(res.ok) {
+                const data = await res.json();
+                setTransactions(data);
+            }
             setLoading(false);
         }
         load();

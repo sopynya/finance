@@ -37,7 +37,8 @@ export default function Pots({pots}) {
 
             <main className={styles.main}>
                 {pots.map((p) => {
-                    const percentage = (p.savings / p.goal) * 100;
+                    const safeGoal = Number(p.goal) || 0;
+                    const percentage = safeGoal ? (p.savings / safeGoal) * 100 : 0
                     return(
                         <div key={p.id} className={styles.pot}>
                             <div className={styles.head}>
@@ -87,7 +88,7 @@ function AddMoney({pot, onClose}) {
     const [error, setError] = useState("");
 
     const handleChange = (e) => {
-        let value = e.target.value.replace(/\D/g, ""); 
+        const value = e.target.value.replace(/\D/g, ""); 
 
         if (!value) {
             setAmount(0);
@@ -114,7 +115,7 @@ function AddMoney({pot, onClose}) {
                 const data = await res.json();
                 setError(data.error);
             }
-        }catch(err) {
+        }catch {
             setError('Something went wrong');
         } finally {
             setLoading(false);
@@ -190,14 +191,14 @@ function WithdrawMoney({pot, onClose}) {
                 const data = await res.json();
                 setError(data.error);
             }
-        }catch(err) {
+        }catch {
             setError('Something went wrong');
         } finally {
             setLoading(false);
         }
     };
     const handleChange = (e) => {
-        let value = e.target.value.replace(/\D/g, ""); 
+        const value = e.target.value.replace(/\D/g, ""); 
 
         if (!value) {
             setAmount(0);
@@ -209,7 +210,7 @@ function WithdrawMoney({pot, onClose}) {
     return(
         <div className={styles.bg}>
         <div className={styles.modal}>
-            <h1>Withdraw from '{pot.name}'</h1>
+            <h1>Withdraw from &apos;{pot.name}&apos;</h1>
             <p>Withdraw from your pot to put money back in your main balance. This will reduce the amount you have in this pot.</p>
             <img src='/assets/images/icon-close-modal.svg' alt='Close icon' onClick={onClose}/>
             <div className={styles.modalstart}>

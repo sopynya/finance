@@ -27,7 +27,7 @@ export default function AddPot({onClose}) {
             orange: '#BE6C49'
         }
         const handleChange = (e) => {
-            let value = e.target.value.replace(/\D/g, ""); 
+            const value = e.target.value.replace(/\D/g, ""); 
     
             if (!value) {
                 setAmount(0);
@@ -54,7 +54,7 @@ export default function AddPot({onClose}) {
                     const data = await res.json();
                     setError(data.error);
                 }
-            }catch(err) {
+            }catch {
                 setError('Something went wrong');
             } finally {
                 setLoading(false);
@@ -98,8 +98,8 @@ export default function AddPot({onClose}) {
                             <img src='/assets/images/icon-caret-down.svg' alt='Caret down icon'/>
                             {showColors && (
                                 <div className={styles.colors}>
-                                    {Object.entries(colors).map(([name, hex]) => (
-                                        <p key={hex} onClick={() => setColor(name)}><span style={{backgroundColor: hex}} />{name}</p>
+                                    {Object.entries(colors).map(([namec, hex]) => (
+                                        <p key={hex} onClick={() => setColor(namec)}><span style={{backgroundColor: hex}} />{namec}</p>
                                     ))}
                                 </div>
                             )}

@@ -28,7 +28,7 @@ export default function Register() {
                 setLoading(false);
             }
 
-        } catch (err) {
+        } catch {
             setLoading(false);
             setError('Something went wrong');
         }

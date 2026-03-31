@@ -45,7 +45,7 @@ export default function AddBudget({onClose}) {
     }, [cents]);
 
     const handleChange = (e) => {
-        let value = e.target.value.replace(/\D/g, ""); 
+        const value = e.target.value.replace(/\D/g, ""); 
 
         if (!value) {
             setCents(0);
@@ -75,7 +75,7 @@ export default function AddBudget({onClose}) {
                 const data = await res.json();
                 setError(data.error);
             }
-        }catch(err) {
+        }catch {
             setError('Something went wrong');
         } finally {
             setLoading(false);
@@ -107,7 +107,7 @@ export default function AddBudget({onClose}) {
                         Maximum Spend
                         <div className={styles.value}>
                             <span>$</span>
-                            <input type='text' value={formatted == 0 ? '' : formatted} placeholder='e.g. 2000' onChange={handleChange} onKeyDown={(e) => {
+                            <input type='text' value={formatted === 0 ? '' : formatted} placeholder='e.g. 2000' onChange={handleChange} onKeyDown={(e) => {
                                 const allowedKeys = [
                                     "Backspace",
                                     "Delete",

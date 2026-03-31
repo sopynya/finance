@@ -41,12 +41,12 @@ export default function Bills({bills}) {
         }
         if(sort === 'highest') {
             result = [...result].sort((a, b) => 
-                Number(a.amount) > Number(b.amount)
+                Number(b.amount) - Number(a.amount)
             )
         }
         if(sort === 'lowest') {
             result = [...result].sort((a, b) => 
-                Number(a.amount) < Number(b.amount)
+                Number(a.amount) - Number(b.amount)
             )
         }
         return result

@@ -110,3 +110,30 @@
     top: 40px;
     left: 40px;
 }
+@media only screen and (max-width: 1024px) {
+    .page {
+        padding: 0;
+        flex-direction: column;
+    }
+    .hero {
+        width: 100%;
+        border-radius: 0px;
+        background-color: #201F24;
+        background-image: none;
+        height: fit-content;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 15px;
+    }
+    .hero h2 {
+        display: none;
+    }
+    .hero p {
+        display: none;
+    }
+    .logo {
+        position: unset;
+        width: 150px;
+    }
+}

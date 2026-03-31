@@ -26,7 +26,7 @@ export default function Login() {
                 setError(data.error);
                 setLoading(false);
             }
-        } catch (err) {
+        } catch {
             setLoading(false);
             setError('Something went wrong')
         }

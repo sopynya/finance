@@ -34,15 +34,17 @@ export default function Overview() {
         async function load() {
             setLoading(true);
             const res = await fetch('/api/overview');
-            const data = await res.json();
-            setCurrentBalance(data.totalBalance);
-            setIncome(data.income);
-            setExpenses(data.totalExpenses);
-            setTotalSavings(data.totalSavings);
-            setPots(data.pots)
-            setTransactions(data.transactions);
-            setBudgets(data.budgets);
-            setBills(data.bills)
+            if(res.ok) {
+                const data = await res.json();
+                setCurrentBalance(data.totalBalance);
+                setIncome(data.income);
+                setExpenses(data.totalExpenses);
+                setTotalSavings(data.totalSavings);
+                setPots(data.pots)
+                setTransactions(data.transactions);
+                setBudgets(data.budgets);
+                setBills(data.bills)
+            }
             setLoading(false);
         }
         load();

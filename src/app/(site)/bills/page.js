@@ -9,9 +9,11 @@ export default function BillsPage() {
         async function load() {
             setLoading(true);
             const res = await fetch('/api/bills');
-            const data = await res.json();
-            setBills(data);
-            setLoading(false);
+            if(res.ok) {
+                const data = await res.json();
+                setBills(data);
+                setLoading(false);
+            }
         }
         load();
     }, []);

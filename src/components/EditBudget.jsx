@@ -10,7 +10,7 @@ export default function EditBudget({onClose, budget}) {
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState("");
     const handleChange = (e) => {
-        let value = e.target.value.replace(/\D/g, ""); 
+        const value = e.target.value.replace(/\D/g, ""); 
 
         if (!value) {
             setAmount(0);
@@ -55,7 +55,7 @@ export default function EditBudget({onClose, budget}) {
         setLoading(true);
         setError("");
         try {
-            if(!amount || amount == 0) {
+            if(!amount || amount === 0) {
                 setError("Fill all fields");
                 setLoading(false);
                 return;
@@ -69,7 +69,7 @@ export default function EditBudget({onClose, budget}) {
                 const data = await res.json();
                 setError(data.error);
             }
-        }catch(err) {
+        }catch {
             setError('Something went wrong');
         } finally {
             setLoading(false);

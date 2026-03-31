@@ -44,7 +44,7 @@ export default function AddTransactions({onClose}) {
     }, [cents]);
 
     const handleChange = (e) => {
-        let value = e.target.value.replace(/\D/g, ""); 
+        const value = e.target.value.replace(/\D/g, ""); 
 
         if (!value) {
             setCents(0);
@@ -75,7 +75,7 @@ export default function AddTransactions({onClose}) {
                 const data = await res.json();
                 setError(data.error);
             }
-        }catch(err) {
+        }catch {
             setError('Something went wrong');
         } finally {
             setLoading(false);

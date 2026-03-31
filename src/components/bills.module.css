@@ -200,3 +200,24 @@ text-align: start;
     color:#201F24;
     font-weight: 900;
 }
+@media only screen and (max-width: 768px) {
+    .page {
+        padding: 24px 16px;
+    }
+    .main {
+        flex-direction: column;
+    }
+    .nametd  {
+        min-width: none;
+        width: fit-content;
+    }
+    .filter {
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+    }
+    .table th, .table td {
+        padding: 16px 0;
+    }
+}
+

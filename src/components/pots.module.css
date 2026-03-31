@@ -276,3 +276,11 @@
 .editsection hr {
     border: 1px solid #F8F4F0;
 }
+@media only screen and (max-width: 768px) {
+    .main {
+        flex-direction: column;
+    }
+    .pot {
+        width: 100%;
+    }
+}

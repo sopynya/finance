@@ -9,8 +9,10 @@ export default function PotsPage() {
         async function load() {
             setLoading(true);
             const res = await fetch('/api/pots');
-            const data = await res.json();
-            setPots(data);
+            if(res.ok) {
+                const data = await res.json();
+                setPots(data);
+            }
             setLoading(false);
         }
         load();

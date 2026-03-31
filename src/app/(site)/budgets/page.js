@@ -10,9 +10,11 @@ export default function BudgetsPage() {
         async function load() {
             setLoading(true);
             const res =await fetch('/api/budgets');
-            const data = await res.json();
-            setBudgets(data.budgets);
-            setTransactions(data.transactions);
+            if(res.ok) {
+                const data = await res.json();
+                setBudgets(data.budgets);
+                setTransactions(data.transactions);
+            }
             setLoading(false);
         }
         load();
